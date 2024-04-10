@@ -29,3 +29,56 @@
 # Vārdnīcas - https://www.w3schools.com/python/python_dictionaries.asp
 # Klonēt repozitoriju - hhttps://code.visualstudio.com/docs/sourcecontrol/intro-to-git
 #
+import json
+main_saraksts = []
+#Lasa čeku datus uz variables
+with open('main_saraksts.json', 'r') as openfile:
+    # Lasa no json faila
+    main_saraksts = json.load(openfile)
+    print("1. Pievieno preci")
+    print("2. Čeku dati")
+    print("3. Atlikums")
+    print("4.Nepietiek summas lai apmaksatu preces ")
+    print("5.dzes preci pec kartas numura  ")
+    print("5.ievada atcelšana  ")
+#While true repeat the action
+while True:
+    choice = input("\nChoose choice:")
+    #Lietotajs ievada čeka datus 
+    if choice == "1":
+        Jusu_limits = input("Jusu_limits:")
+        Preču_nosaukums =input("Preču nosaukums:")
+        cena = (input("Preču cena:"))
+        atlaide = (input("Cik procentus atlaide"))
+        Vardnica={ 
+        "Jusu_limits" : Jusu_limits,
+        "Preču_)nosaukums": Preču_nosaukums,
+        "cena": cena,
+        "atlaide" : atlaide
+        }
+        #Izdruka čeka datus
+        print(Vardnica)
+        main_saraksts.append(Vardnica)
+    elif choice == "2":
+        answer = cena =- atlaide 
+        print(answer,"Samaksaja par visu")
+        #Parada lietotajam atlikumu
+    elif choice == "3":
+        if cena < Jusu_limits:
+           atlikums == 0
+           atlikums = cena =- Jusu_limits
+        print(atlikums)
+    #Parada lietotajam ka nav atlikuma 
+    elif choice == "4":
+        if cena > Jusu_limits:
+            
+           nepietiek_naudas = cena > Jusu_limits
+        print(nepietiek_naudas)
+    elif choice == "5":
+        delete = ("delete prece by sequince number")
+        #Atcel ievadu un apstaj kodu
+    elif choice == "6":
+        print("ievada atcelšana...")
+        break
+        
+pass 
